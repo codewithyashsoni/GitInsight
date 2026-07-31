@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import Logo from "./components/Logo.jsx"
 import SearchBar from "./components/SearchBar.jsx"
+import UserData from "./components/UserData.jsx"
 
 function App() {
   const [query, setQuery] = useState("");
@@ -61,6 +62,7 @@ function App() {
     <div className="container">
       <Logo />
       <SearchBar setQuery={setQuery} loading={loading} />
+      {data && <UserData data={data} />}
 
     </div>
   )
