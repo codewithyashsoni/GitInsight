@@ -294,3 +294,47 @@ body{
   height: 1.5rem;
   width: 1.5rem;
 }
+.repository-section-container{
+  margin: 1rem 0;
+}
+.repository-controls-container{
+  display: flex;
+  gap :1rem;
+  padding: 1rem;
+  align-items: center;
+}
+.repository-controls-container h2{
+  color: var(--text-primary);
+  font-size: 2rem;
+}
+.sort-filter-container{
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+}
+.sort-selection, .filter-input{
+  flex: 1;
+  font-size: 1rem;
+  padding: .5rem 1rem;
+  background-color: var(--input-bg);
+  color: var(--text-secondary);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  transition: var(--transition);
+  box-shadow: var(--shadow-md);
+}
+.sort-selection:hover, .filter-input:hover{
+  transform: scale(1.02);
+  background-color: var(--input-hover-bg);
+  outline: none;
+  border-color: var(--input-focus);
+  box-shadow: var(--glow-secondary)
+}
+.filter-input::placeholder{
+  color: var(--text-placeholder);
+}
+.filter-input:focus{
+  outline: none;
+  border-color: var(--input-focus);
+  box-shadow: var(--glow-secondary);
+}
