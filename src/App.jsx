@@ -3,6 +3,7 @@ import Logo from "./components/Logo.jsx"
 import SearchBar from "./components/SearchBar.jsx"
 import UserData from "./components/UserData.jsx"
 import Loader from "./components/Loader.jsx"
+import ErrorMessage from "./components/ErrorMessage.jsx"
 
 function App() {
   const [query, setQuery] = useState("");
@@ -26,16 +27,28 @@ function App() {
       ]);
 
       if(userResponse.status === 404){
-        throw new Error("User not found");
+        throw {
+          title: "User not found",
+          message: "Please check the username and try again."
+        }
       }
       if(userResponse.status === 403){
-        throw new Error("GitHub API rate limit exceeded");
+        throw {
+          title: "Rate limit exceeded",
+          message: "GitHub rate limit exceeded.Please try again later."
+        }
       }
       if(!userResponse.ok){
-        throw new Error("Something went wrong");
+        throw {
+          title: "Something went wrong",
+          message: "Unable to fetch the user profile. Please try again later."
+        }
       }
       if(!repoResponse.ok){
-        throw new Error("Failed to fetch repositories");
+        throw {
+          title: "Repository error",
+          message: "Unable to fetch repositories. Please try again."
+        }
       }
 
       const [userData, repoData] = await Promise.all([
@@ -49,8 +62,14 @@ function App() {
       }
       setData(newData);
     }catch(error){
-      setError(error.message);
-      console.error("error message:", error.message);
+      if(error.title){
+        setError(error);
+      }else{
+        setError({
+          title: "Connection failed",
+          message: "Please check your internet connection and try again."
+        })
+      }
     }finally{
       setLoading(false);
     }
@@ -60,12 +79,16 @@ function App() {
     <div className="container">
       <Logo />
       <SearchBar setQuery={setQuery} loading={loading} />
-      {loading ? 
-        (<Loader />)
-        :
-        (data && <UserData data={data} />)
+      {loading ? (
+        <Loader />
+      ) : (
+        error ? (
+          <ErrorMessage title={error.title} message={error.message} />
+        ) : (
+          data && <UserData data={data} />
+        )
+      )
       }
-
     </div>
   )
 }
