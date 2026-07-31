@@ -1,4 +1,3 @@
-import React, {useState} from "react"
 import {ArrowUpRight} from "lucide-react"
 
 function ProfileCard({data}){

@@ -1,4 +1,3 @@
-import {useState} from "react"
 import ProfileCard from "./ProfileCard.jsx"
 import RepositorySection from "./RepositorySection.jsx"
 

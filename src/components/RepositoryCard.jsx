@@ -24,20 +24,16 @@ function RepositoryCard({repo}){
             <p className="repo-description">{description}</p>
 
             <div className="repository-info">
-
                 <div className="repo-stars">
                     <Star className="star-icon" />
-
                     <p className="repo-star-count">{stargazers_count}</p>
                 </div>
 
                 <p className="repo-language" style={{color: languageColors[language]}}>
                     {language}
                 </p>
-
             </div>
         </div>
     )
-
 }
 export default RepositoryCard

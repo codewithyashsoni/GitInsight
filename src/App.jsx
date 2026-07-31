@@ -41,8 +41,6 @@ function App() {
         userResponse.json(),
         repoResponse.json()
       ]);
-      console.log(userData);
-      console.log("repo", repoData);
 
       const newData = {
         user: userData,
@@ -51,8 +49,7 @@ function App() {
       setData(newData);
     }catch(error){
       setError(error.message);
-      console.log("error msg", error.message);
-
+      console.error("error message:", error.message);
     }finally{
       setLoading(false);
     }

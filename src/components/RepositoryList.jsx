@@ -8,6 +8,5 @@ function RepositoryList({repos}){
             ))}
         </div>
     )
-
 }
 export default RepositoryList

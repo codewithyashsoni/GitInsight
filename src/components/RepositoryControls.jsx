@@ -4,13 +4,11 @@ function RepositoryControls({sort, setSort, filter, setFilter}){
             <h2>Repositories: </h2>
 
             <div className="sort-filter-container">
-
                 <select
                     value={sort}
                     onChange={(e) => setSort(e.target.value)}
                     className="sort-selection"
-                >
-                    
+                > 
                     <option value="Recently Updated">Recently Updated</option>
                     <option value="Most Stars">Most stars</option>
                 </select>
@@ -22,9 +20,7 @@ function RepositoryControls({sort, setSort, filter, setFilter}){
                     placeholder="Filter repositories..."
                     className="filter-input"
                 />
-
             </div>
-
         </div>
     )   
 }
