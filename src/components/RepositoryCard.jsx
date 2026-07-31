@@ -33,14 +33,15 @@ function RepositoryCard({repo}){
                 <p className="repo-language" style={{color: languageColors[language]}}>
                     {language}
                 </p>}
-
-                <a 
-                rel="noopener noreferrer"
-                className="repo-link"
-                href={html_url}
-                target="_blank"
-                >View Repository</a>
             </div>
+
+            <a 
+            rel="noopener noreferrer"
+            className="repo-link"
+            href={html_url}
+            target="_blank"
+            >View Repository</a>
+            
         </div>
     )
 }

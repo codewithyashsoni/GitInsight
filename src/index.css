@@ -237,7 +237,7 @@ body{
   display: flex;
   gap :2rem;
   align-items: center;
-  padding :1rem 0;
+  padding :2rem 0 1rem 0;
 }
 .avatar{
   width: 10rem;
@@ -261,6 +261,7 @@ body{
 .user-socials{
   display: flex;
   justify-content: space-evenly;
+  flex-wrap: wrap;
 }
 .user-social{
   color: var(--text-secondary);
@@ -274,7 +275,7 @@ body{
   top: 1rem;
   right: 1rem;
   font-size :1.2rem;
-  padding: 1rem 2rem;
+  padding: .5rem 1.5rem;
   background-color: var(--button-secondary-bg);
   border: 1px solid var(--button-secondary-border);
   color: var(--button-secondary-text);
@@ -455,4 +456,94 @@ body{
 }
 ::-webkit-scrollbar-thumb:hover{
   background: var(--scroll-thumb-hover);
+}
+
+@media (max-width: 768px){
+  html{
+    font-size: 14px;
+  }
+  .container{
+    width: min(95%);
+  }
+  .search-container form{
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .profile-container{
+    padding :1.5rem;
+  }
+  .profile-link{
+    position: static;
+    width: fit-content;
+    align-self: flex-end;
+  }
+  .user-profile{
+    gap: 1.25rem;
+  }
+  .repository-controls-container{
+    align-items: flex-start;
+  }
+  .sort-filter-container{
+    flex-direction: column;
+  }
+  .repository-info{
+    gap: 1.5rem;
+  }
+  .repo-link{
+    top: auto;
+    bottom: 1rem;
+  }
+}
+@media (max-width: 480px){
+  html{
+    font-size: 12px;
+  }
+  .logo-container h1{
+    font-size :3rem;
+  }
+  .profile-container{
+    padding: 1rem;
+  }
+  .user-profile{
+    flex-direction: column;
+    text-align: center;
+    gap :1rem;
+  }
+  .avatar{
+    width: 7rem;
+    height: 7rem;
+  }
+  .user-info h2{
+    font-size: 2rem;
+  }
+  .user-info p{
+    font-size: 1.2rem;
+  }
+  .user-bio{
+    text-align: center;
+  }
+  .user-socials{
+    text-align :center;
+    gap: 1rem;
+  }
+  .profile-link{
+    width :100%;
+    justify-content: center;
+  }
+  .repository-controls-container{
+    flex-direction: column;
+  }
+  .repository-info{
+    gap: 1rem;
+  }
+  .loading-circle, .error-icon{
+    width: 6rem;
+    height: 6rem;
+  }
+  .error-component h1{
+    font-size :2.2rem;
+  }
+  .error-component p{
+    font-size: 1.3rem;
+  }
 }
