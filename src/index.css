@@ -387,3 +387,16 @@ body{
 .repo-language{
   font-weight: 700;
 }
+.loading-component{
+  padding :1rem;
+  min-height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.loading-circle{
+  height: 10rem;
+  width: 10rem;
+  color: var(--text-muted);
+  animation :spin 1s linear infinite;
+}
