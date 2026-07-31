@@ -3,7 +3,7 @@ function RepositoryControls({sort, setSort, filter, setFilter}){
         <div className="repository-controls-container">
             <h2>Repositories: </h2>
 
-            <div class="sort-filter-container">
+            <div className="sort-filter-container">
 
                 <select
                     value={sort}
