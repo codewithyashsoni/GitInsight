@@ -16,12 +16,12 @@ const languageColors = {
 };
 
 function RepositoryCard({repo}){
-    const {name, description, language, stargazers_count} = repo;
+    const {name, description, language, stargazers_count, html_url} = repo;
 
     return(
         <div className="repository-card">
             <h3>{name}</h3>
-            <p className="repo-description">{description}</p>
+            {description && <p className="repo-description">{description}</p>}
 
             <div className="repository-info">
                 <div className="repo-stars">
@@ -29,9 +29,17 @@ function RepositoryCard({repo}){
                     <p className="repo-star-count">{stargazers_count}</p>
                 </div>
 
+                {language && 
                 <p className="repo-language" style={{color: languageColors[language]}}>
                     {language}
-                </p>
+                </p>}
+
+                <a 
+                rel="noopener noreferrer"
+                className="repo-link"
+                href={html_url}
+                target="_blank"
+                >View Repository</a>
             </div>
         </div>
     )

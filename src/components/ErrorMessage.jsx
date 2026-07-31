@@ -8,6 +8,5 @@ function ErrorMessage({title, message}){
             <p>{message}</p>
         </div>
     )
-
 }
 export default ErrorMessage

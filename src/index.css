@@ -241,7 +241,8 @@ body{
 }
 .avatar{
   width: 10rem;
-  height: auto;
+  height: 10rem;
+  object-fit: cover;
   border-radius: var(--radius-full)
 }
 .user-info h2{
@@ -268,7 +269,7 @@ body{
 .bold{
   font-weight: 600;
 }
-.profile-link{
+.profile-link, .repo-link{
   position: absolute;
   top: 1rem;
   right: 1rem;
@@ -283,15 +284,22 @@ body{
   box-shadow: var(--shadow-md);
   display: flex;
   gap: .2rem;
+  justify-content: center;
   align-items: center;
   transition: var(--transition);
 }
-.profile-link:hover{
+.repo-link{
+  font-size: .8rem;
+  padding :.5rem 1rem;
+  top: .5rem;
+  right: .5rem;
+}
+.profile-link:hover, .repo-link:hover{
   background-color: var(--button-secondary-hover);
   transform: translateY(-2px);
   box-shadow: var(--shadow-lg);
 }
-.profile-link:active{
+.profile-link:active, .repo-link:active{
   transform: scale(.95);
 }
 .profile-link-icon{
@@ -356,6 +364,13 @@ body{
   display: flex;
   flex-direction: column;
   gap: .5rem;
+  transition: var(--transition);
+  position: relative;
+}
+.repository-card:hover{
+  transform: translateY(-3px);
+  border-color: var(--primary);
+  background-color: var(--surface-hover);
 }
 .repository-card h3{
   color: var(--text-primary);

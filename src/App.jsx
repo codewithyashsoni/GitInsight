@@ -60,6 +60,7 @@ function App() {
         user: userData,
         repos: repoData
       }
+      console.log(repoData);
       setData(newData);
     }catch(error){
       if(error.title){
