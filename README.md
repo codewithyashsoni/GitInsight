@@ -6,7 +6,7 @@ A modern and responsive GitHub Profile Finder built with React that lets you ins
 
 ## 🌐 Live Demo
 
-**🔗 Live Website:** 
+**🔗 Live Website:** https://gitinsight-yash.netlify.app/
 
 ---
 
